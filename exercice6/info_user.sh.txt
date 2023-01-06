@@ -1,0 +1,22 @@
+
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+        echo "Aucun utilisateur n'est specifie."
+        exit 1;
+fi
+
+username=$1
+echo "Information sur l'utilisateur avec la commande id :"
+id $username
+echo "Infomation sur l'utilisateur avec la commande finger :"
+finger $username
+echo "Information sur l'utilisateur via le fichier /etc/passwd"
+cat /etc/passwd | sed -n "/$1/p"
+
+
+
+
+
+
